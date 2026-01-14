@@ -150,7 +150,7 @@ Write a SQL command to **update the city named `"Nashville-Davidson"` to `"Nashv
 ```sql
 UPDATE city
 SET Name = 'Nashville'
-WHERE Name = 'Nashville-Davidson';
+WHERE ID = 3814;
 ```
 
 ### Screenshot
@@ -167,8 +167,12 @@ Use reasonable values for the remaining columns.
 ### SQL
 
 ```sql
-INSERT INTO country (Code, Name, Continent, Region, Population)
-VALUES ('NAR', 'Narnia', 'Europe', 'Fantasy', 1000000);
+INSERT INTO country
+(Code, Name, Continent, Region, SurfaceArea, IndepYear, Population, LifeExpectancy,
+ GNP, GNPOld, LocalName, GovernmentForm, HeadOfState, Code2)
+VALUES
+('NAR', 'Narnia', 'Europe', 'Fantasy', 50000.0, 1950, 1000000, 75.5,
+ 12000.0, 11000.0, 'Narnia', 'Constitutional Monarchy', 'Aslan', 'NA');
 ```
 
 ### Screenshot
