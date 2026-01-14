@@ -15,10 +15,10 @@
 site_name: "Project Documentation"
 
 #TODO: Change to your GitHub Pages URL.
-site_url: https://denisecase.github.io/databases-for-analytics/
+site_url: https://github.com/BethSpornitz/databases-for-analytics
 
 #TODO: Change to your GitHub repository URL.
-repo_url: https://github.com/denisecase/databases-for-analytics
+repo_url: https://github.com/BethSpornitz/databases-for-analytics
 
 site_description: Project documentation.
 
@@ -30,7 +30,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       #TODO: Change to your GitHub repository URL.
-      link: https://github.com/denisecase/databases-for-analytics
+      link: https://github.com/BethSpornitz/databases-for-analytics
 
 # WHY: Material theme is industry standard, well-documented, and low maintenance.
 # CUSTOM: Explore other themes at https://mkdocs.org/about/themes/

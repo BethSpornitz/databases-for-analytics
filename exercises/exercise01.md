@@ -27,7 +27,9 @@
 Why were these data types selected?
 
 ### Answer
-_Write your explanation here._
+Population is an integer and life expectancy is a decimal.  
+- Integer was selected as the data type for population because this counts "whole people".  People are not broken into a fraction when talking about population.
+- Decimal was chosen as the data type for life expectancy because years are many times broken into fractions or decimals and this allows us to compare data from partial years.
 
 ### Screenshot
 _Show the table structure or DESCRIBE output._
