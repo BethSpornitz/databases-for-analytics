@@ -48,7 +48,7 @@ DESCRIBE country;
 Why do you think this data type was selected?
 
 ### Answer
-_Write your explanation here._
+The datatype selected for IndepYear is smallint or small-range integer.  This datatype ws selected because the year that a country gained independence would be a relatively small number and range.
 
 ### Screenshot
 
