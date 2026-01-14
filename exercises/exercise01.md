@@ -66,7 +66,7 @@ DESCRIBE country;
 Explain why your proposed data type might be better in some situations.
 
 ### Answer
-_Write your explanation here._
+I would propose that we select YEAR.  This allows for built in validations and year ranges.
 
 ---
 
