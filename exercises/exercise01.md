@@ -1,6 +1,6 @@
 # Exercise 01: World Database SQL Practice
 
-- Name:
+- Name:  Beth Spornitz
 - Course: Database for Analytics
 - Module: 1
 - Database Used: World Database
