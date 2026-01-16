@@ -160,7 +160,13 @@ Label the column **"City or Country Name"**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT name AS "City or Country Name"
+FROM city
+UNION
+SELECT name AS "City or Country Name"
+FROM country
+ORDER BY "City or Country Name";
+
 ```
 
 ### Screenshot
