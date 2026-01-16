@@ -101,7 +101,7 @@ ON country.code = countrylanguage.countrycode;
 **In your own words**, describe what data the **second query returns that the first query does not**.
 
 ### Answer
-_Write your explanation here._
+What the second query returns that the first query does not is all countries regardless of whether or not they have a matching language record.  In the 2nd query, instead of getting rid of the rows without a matching language record, all countries are displayed and the language will be NULL.
 
 ---
 
@@ -113,7 +113,37 @@ Do **not** repeat any form of government more than once.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT DISTINCT country.governmentform
+FROM country;
+```
+
+The shorter code yielded output that looked like there were duplicates.  I don't think the intent was for us to try to clean the data inside SQL, so instead the code below does the same thing, but it shows the spaces and line breaks that you can't see normally.
+
+```
+WITH government_cleaning AS (
+  SELECT
+    governmentform,
+    REPLACE(
+      REPLACE(
+        REPLACE(governmentform, ' ', '␣'),
+        E'\n', '[NL]'
+      ),
+      E'\r', '[CR]'
+    ) AS visible_governmentform,
+    TRIM(
+      REPLACE(
+        REPLACE(governmentform, E'\n', ''),
+        E'\r', ''
+      )
+    ) AS cleaned_governmentform
+  FROM country
+  WHERE governmentform IS NOT NULL
+)
+SELECT DISTINCT
+  cleaned_governmentform AS government_form,
+  visible_governmentform
+FROM government_cleaning
+ORDER BY government_form;
 ```
 
 ### Screenshot
