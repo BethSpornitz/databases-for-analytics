@@ -44,7 +44,13 @@ Using the World database, write the SQL command to **display each country name a
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+  country.name AS country_name,
+  countrylanguage.language
+FROM country
+JOIN countrylanguage
+  ON country.code = countrylanguage.countrycode
+ORDER BY country.name, countrylanguage.language;
 ```
 
 ### Screenshot
