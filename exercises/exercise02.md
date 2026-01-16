@@ -257,7 +257,19 @@ Using the World database, write the SQL command to **find cities where the distr
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+  ROUND(
+    100.0 * SUM(
+      CASE
+        WHEN district IS NULL
+          OR TRIM(district) = ''
+          OR district LIKE '%-%'
+        THEN 1 ELSE 0
+      END
+    ) / COUNT(*)
+  , 3) AS pct_cities_missing_district
+FROM city;
+
 ```
 
 ### Screenshot
