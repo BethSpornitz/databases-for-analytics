@@ -207,7 +207,12 @@ Be sure to **sort by language name**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+  countrylanguage.language,
+  COUNT(DISTINCT countrylanguage.countrycode) AS country_count
+FROM countrylanguage
+GROUP BY countrylanguage.language
+ORDER BY countrylanguage.language;
 ```
 
 ### Screenshot
