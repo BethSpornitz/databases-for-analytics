@@ -119,7 +119,7 @@ FROM country;
 
 The shorter code yielded output that looked like there were duplicates.  I don't think the intent was for us to try to clean the data inside SQL, so instead the code below does the same thing, but it shows the spaces and line breaks that you can't see normally.
 
-```
+```sql
 WITH government_cleaning AS (
   SELECT
     governmentform,
