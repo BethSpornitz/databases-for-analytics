@@ -257,16 +257,11 @@ Using the World database, write the SQL command to **find cities where the distr
 ### SQL
 
 ```sql
-SELECT
-  id,
-  name,
-  countrycode,
-  district,
-  population
+SELECT id, name, countrycode, district, population
 FROM city
 WHERE district IS NULL
    OR TRIM(district) = ''
-   OR TRIM(district) LIKE '-%'
+   OR TRIM(TRANSLATE(district, '-–', '')) = ''
 ORDER BY countrycode, name;
 ```
 
@@ -274,7 +269,7 @@ ORDER BY countrycode, name;
 
 Missing districts were identified by checking for NULLs, blank strings, and dash-based placeholders using LIKE, although this dataset contains only blank values.
 
-![Q10 Screenshot](screenshots/q10_missing_districts.png)
+![Q10 Screenshot](screenshots/q10_missing_districts_v2.png)
 
 ---
 
@@ -293,8 +288,10 @@ SELECT
   ROUND(
     100.0 * SUM(
       CASE
-        WHEN district IS NULL OR TRIM(district) = '' THEN 1
-        ELSE 0
+        WHEN district IS NULL
+          OR TRIM(district) = ''
+          OR TRIM(TRANSLATE(district, '-–', '')) = ''
+        THEN 1 ELSE 0
       END
     ) / COUNT(*),
     2
@@ -304,6 +301,4 @@ FROM city;
 
 ### Screenshot
 
-In this version of the World database, missing district values are stored as blank strings rather than NULL or dash placeholders. Only 4 of 4079 cities have blank districts as shown above, resulting in 0.10% missing values.  I am confident that this is correct for the data I am using from copy/pasting the data from the dataset at the bottom of the video page.
-
-![Q11 Screenshot](screenshots/q11_missing_district_percentage_v2.png)
+![Q11 Screenshot](screenshots/q11_missing_district_percentage_v3.png)
