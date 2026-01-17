@@ -289,7 +289,7 @@ SELECT
   ROUND(
     100.0 * SUM(
       CASE
-        WHEN district IS NULL OR TRIM(district) = '' OR TRIM(district) = '-' THEN 1
+        WHEN district IS NULL OR TRIM(district) = '' THEN 1
         ELSE 0
       END
     ) / COUNT(*),
