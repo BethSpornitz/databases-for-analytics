@@ -266,8 +266,9 @@ SELECT
 FROM city
 WHERE district IS NULL
    OR TRIM(district) = ''
-   OR district LIKE '%-%'
+   OR TRIM(district) = '-'
 ORDER BY countrycode, name;
+
 ```
 
 ### Screenshot
