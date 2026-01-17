@@ -267,8 +267,6 @@ ORDER BY countrycode, name;
 
 ### Screenshot
 
-Missing districts were identified by checking for NULLs, blank strings, and dash-based placeholders using LIKE, although this dataset contains only blank values.
-
 ![Q10 Screenshot](screenshots/q10_missing_districts_v2.png)
 
 ---
