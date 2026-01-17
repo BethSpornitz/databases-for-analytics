@@ -272,6 +272,8 @@ ORDER BY countrycode, name;
 
 ### Screenshot
 
+Missing districts were identified by checking for NULLs, blank strings, and dash-based placeholders using LIKE, although this dataset contains only blank values.
+
 ![Q10 Screenshot](screenshots/q10_missing_districts.png)
 
 ---
@@ -281,6 +283,8 @@ ORDER BY countrycode, name;
 Using the World database, write the SQL command to **calculate the percentage of cities with missing district values**.
 
 *Hint: The result should be approximately 0.4%.*
+
+
 
 ### SQL
 
@@ -299,5 +303,7 @@ FROM city;
 ```
 
 ### Screenshot
+
+In this version of the World database, missing district values are stored as blank strings rather than NULL or dash placeholders. Only 4 of 4079 cities have blank districts as shown above, resulting in 0.10% missing values.  I am confident that this is correct for the data I am using from copy/pasting the data from the dataset at the bottom of the video page.
 
 ![Q11 Screenshot](screenshots/q11_missing_district_percentage_v2.png)
