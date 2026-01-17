@@ -300,4 +300,4 @@ FROM city;
 
 ### Screenshot
 
-![Q11 Screenshot](screenshots/q11_missing_district_percentage.png)
+![Q11 Screenshot](screenshots/q11_missing_district_percentage_v2.png)
