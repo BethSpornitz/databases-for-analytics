@@ -266,9 +266,8 @@ SELECT
 FROM city
 WHERE district IS NULL
    OR TRIM(district) = ''
-   OR TRIM(district) = '-'
+   OR TRIM(district) LIKE '-%'
 ORDER BY countrycode, name;
-
 ```
 
 ### Screenshot
@@ -290,13 +289,12 @@ SELECT
   ROUND(
     100.0 * SUM(
       CASE
-        WHEN district IS NULL
-          OR TRIM(district) = ''
-          OR district LIKE '%-%'
-        THEN 1 ELSE 0
+        WHEN district IS NULL OR TRIM(district) = '' OR TRIM(district) = '-' THEN 1
+        ELSE 0
       END
-    ) / COUNT(*)
-  , 3) AS pct_cities_missing_district
+    ) / COUNT(*),
+    2
+  ) AS missing_district_percentage
 FROM city;
 ```
 
