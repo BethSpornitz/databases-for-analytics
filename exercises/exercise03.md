@@ -76,7 +76,7 @@ Using your `restaurants` collection in the `44661` database, write the MongoDB q
 ### MongoDB Query
 
 ```javascript
-// Your MongoDB query here
+db.restaurants.countDocuments({ borough: "Queens" })
 ```
 
 ### Screenshot
