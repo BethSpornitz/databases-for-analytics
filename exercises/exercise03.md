@@ -1,6 +1,6 @@
 # Exercise 03: MongoDB – Document Queries and Analysis
 
-- Name:
+- Name:  Beth Spornitz
 - Course: Database for Analytics
 - Module: 3
 - Database Used: MongoDB
@@ -24,13 +24,13 @@
 When importing the documents from `restaurants-json.json`, **how many documents were imported into your collection**?
 
 ### Answer
-_Write the number of documents imported._
+25358
 
 ### Screenshot
 _Show evidence of how you determined this (for example, a count query)._
 
 ```javascript
-// Your MongoDB command here
+db.restaurants.countDocuments()
 ```
 
 ![Q1 Screenshot](screenshots/q1_document_count.png)
