@@ -31,7 +31,16 @@ Considering the World database, write a SQL statement that will **display the na
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    c.name AS country_name,
+    COUNT(cl.language) AS official_language_count
+FROM country c
+JOIN countrylanguage cl
+    ON c.code = cl.countrycode
+WHERE cl.isofficial = 'T'
+GROUP BY c.name
+HAVING COUNT(cl.language) > 2
+ORDER BY official_language_count DESC;
 ```
 
 ### Screenshot
