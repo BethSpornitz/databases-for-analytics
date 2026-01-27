@@ -1,8 +1,8 @@
 # Exercise 04: Advanced SQL, Jupyter, and Visualization
 
-- Name:
+- Name:  Beth Spornitz
 - Course: Database for Analytics
-- Module:
+- Module:  4
 - Database Used: World Database
 - Tools Used: PostgreSQL, SQLAlchemy, Pandas, Jupyter Notebooks
 
@@ -58,7 +58,22 @@ After the `create_engine` command is executed, **what are the three statements r
 ### Python Code
 
 ```python
-# Your three Python statements here
+sql_query = """
+SELECT
+    c.name AS country_name,
+    COUNT(cl.language) AS official_language_count
+FROM country c
+JOIN countrylanguage cl
+    ON c.code = cl.countrycode
+WHERE cl.isofficial = 'T'
+GROUP BY c.name
+HAVING COUNT(cl.language) > 2
+ORDER BY official_language_count DESC;
+"""
+
+df = pd.read_sql(sql_query, engine)
+
+df
 ```
 
 ### Screenshot
@@ -78,7 +93,16 @@ Using **Jupyter Notebooks**, write the Python code needed to produce the followi
 ### Python Code
 
 ```python
-# Your Python code here
+import matplotlib.pyplot as plt
+
+plt.figure()
+plt.bar(df["country_name"], df["official_language_count"])
+plt.xticks(rotation=45, ha="right")
+plt.xlabel("Country")
+plt.ylabel("Number of Official Languages")
+plt.title("Countries with More Than Two Official Languages")
+plt.tight_layout()
+plt.show()
 ```
 
 ### Screenshot
