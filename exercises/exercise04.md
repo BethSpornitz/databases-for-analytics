@@ -95,12 +95,20 @@ Using **Jupyter Notebooks**, write the Python code needed to produce the followi
 ```python
 import matplotlib.pyplot as plt
 
-plt.figure()
-plt.bar(df["country_name"], df["official_language_count"])
-plt.xticks(rotation=45, ha="right")
-plt.xlabel("Country")
-plt.ylabel("Number of Official Languages")
-plt.title("Countries with More Than Two Official Languages")
+# Rename columns to match instructor output
+df_plot = df.rename(columns={
+    "country_name": "name",
+    "official_language_count": "num_languages"
+})
+
+# Sort to match visual order
+df_plot = df_plot.sort_values(by="num_languages", ascending=False)
+
+plt.figure(figsize=(6, 4))
+plt.bar(df_plot["name"], df_plot["num_languages"], label="num_languages")
+plt.xticks(rotation=90)
+plt.xlabel("name")
+plt.legend()
 plt.tight_layout()
 plt.show()
 ```
