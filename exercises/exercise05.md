@@ -42,7 +42,11 @@ year
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT DISTINCT
+  EXTRACT(YEAR FROM sent_at)::int AS year
+FROM emails
+WHERE sent_at IS NOT NULL
+ORDER BY year;
 ```
 
 ### Screenshot
