@@ -202,7 +202,15 @@ For example - dealership 1 is below:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+  dealership_id,
+  array_agg(
+    last_name || ',' || first_name
+    ORDER BY last_name, first_name
+  ) AS salespeople
+FROM salespeople
+GROUP BY dealership_id
+ORDER BY dealership_id;
 ```
 
 ### Screenshot
@@ -227,7 +235,19 @@ Reference image:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+  d.dealership_id,
+  d.state,
+  array_agg(
+    s.last_name || ',' || s.first_name
+    ORDER BY s.last_name, s.first_name
+  ) AS salespeople,
+  COUNT(s.salesperson_id) AS salesperson_count
+FROM dealerships d
+JOIN salespeople s
+  ON s.dealership_id = d.dealership_id
+GROUP BY d.dealership_id, d.state
+ORDER BY d.state, d.dealership_id;
 ```
 
 ### Screenshot
