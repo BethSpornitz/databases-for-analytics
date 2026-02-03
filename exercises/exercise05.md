@@ -311,4 +311,4 @@ FROM (
 
 ### Screenshot
 
-![Q10 Screenshot](screenshots/q10_salespeople_array_to_json.png)
+![Q10 Screenshot](screenshots/q10_salespeople_array_to_jsonv2.png)
