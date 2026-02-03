@@ -185,7 +185,7 @@ CREATE TEMP TABLE customer_dealership_distance AS (
 
 ### Answer
 
-_Write your explanation here._
+The code creates three tables.  One table is customer longitude and latitude.  The second table stores the dealership longitude and lattitude, the third table joins the first two tables and calculates the distance to dealerships for each customer. The output will be a table with rows with the customer and dealership listed with a distance between the two.
 
 ---
 
