@@ -69,7 +69,13 @@ count   year
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+  COUNT(*) AS count,
+  EXTRACT(YEAR FROM sent_date)::int AS year
+FROM emails
+WHERE sent_date IS NOT NULL
+GROUP BY EXTRACT(YEAR FROM sent_date)
+ORDER BY year;
 ```
 
 ### Screenshot
