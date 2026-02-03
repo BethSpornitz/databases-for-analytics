@@ -144,7 +144,7 @@ After looking at the data, **why is this the case?**
 
 ### Answer
 
-_Write your explanation here._
+It looks like the sent_date is not a real timestamp.  Instead it is a date with an arbritrary time that has been turned into a timestamp.  The open_date is an actual timestamp with an actual time of day.  So, this creates emails that look like they were opened before they were sent.
 
 ### Screenshot (if requested by instructor)
 
