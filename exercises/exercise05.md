@@ -290,23 +290,23 @@ Reference image:
 ### SQL
 
 ```sql
-WITH dealership_salespeople AS (
+SELECT
+  row_to_json(dealership_salespeople)
+FROM (
   SELECT
     d.dealership_id,
     d.state,
+    COUNT(s.salesperson_id) AS num_salespeople,
     array_agg(
       s.last_name || ',' || s.first_name
       ORDER BY s.last_name, s.first_name
-    ) AS salespeople,
-    COUNT(s.salesperson_id) AS salesperson_count
+    ) AS array_agg
   FROM dealerships d
   JOIN salespeople s
     ON s.dealership_id = d.dealership_id
   GROUP BY d.dealership_id, d.state
   ORDER BY d.state, d.dealership_id
-)
-SELECT jsonb_pretty(jsonb_agg(to_jsonb(dealership_salespeople)))
-FROM dealership_salespeople;
+) AS dealership_salespeople;
 ```
 
 ### Screenshot
