@@ -269,7 +269,7 @@ FROM customers c;
 
 ### Screenshot
 
-![Q9 Screenshot](screenshots/q9_customers_to_json.png)
+![Q9 Screenshot](screenshots/q9_customers_to_json_v2.png)
 
 ---
 
