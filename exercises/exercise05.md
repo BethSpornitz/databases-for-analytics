@@ -263,7 +263,8 @@ Using the `sqlda` database, write the SQL needed to convert the **customers** ta
 ### SQL
 
 ```sql
-SELECT jsonb_pretty(jsonb_agg(to_jsonb(c))) AS customers_json
+SELECT
+  row_to_json(c) AS customer_json
 FROM customers c;
 ```
 
