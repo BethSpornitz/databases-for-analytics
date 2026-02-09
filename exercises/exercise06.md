@@ -1,7 +1,7 @@
 # Module 6 - Exercise 1: Creating a Data Warehouse
 From the Operational Model to the Dimensional Model
 
-- Name:
+- Name:  Beth Spornitz
 - Course: Database for Analytics
 - Module: 6
 
