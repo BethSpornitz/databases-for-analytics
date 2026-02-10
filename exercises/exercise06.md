@@ -120,4 +120,8 @@ In 1-2 short paragraphs, explain:
 
 #### Design Notes
 
-_Write your design notes here._
+I chose a star schema with the fact table (FACT_DAILY_SALES) and the dimension sof DIM-Date, DIM_Customer, and DIM_Part.  I chose DIM_date because then I can analyze sales by different time periods such as daily, monthly, quarterly and even yearly.  The Dim_Customer dimension is helpful because I can identify where customers are located in order to analyze trends based on location.  The DIM_Part dimension was chosen so I can analyze products and product categories such as appliance items.
+
+The fact table grain is daily sales because this allows us to only store amount and quantity as facts, but still be able to answer detailed questions.
+
+My design supports 3 analytics questions such as determining how many of a specific part are sold on any given day, being able to calculate total customer spending over a specific time period, and analyzing average sales by quarter.
