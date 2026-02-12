@@ -67,6 +67,45 @@ The database includes:
 
 Screenshots verifying these steps are included in the screenshots folder.
 
+## Data Dictionary
+
+| Table Name         | Column Name        | Data Type                      |
+|--------------------|-------------------|--------------------------------|
+| staging_noshows    | appointment_id     | bigint                         |
+| staging_noshows    | patient_id         | bigint                         |
+| staging_noshows    | neighbourhood_id   | integer                        |
+| staging_noshows    | scheduled_day      | timestamp without time zone    |
+| staging_noshows    | appointment_day    | date                           |
+| staging_noshows    | sms_received       | integer                        |
+| staging_noshows    | showed_up          | character varying              |
+| staging_noshows    | date_diff          | integer                        |
+| staging_noshows    | gender             | character varying              |
+| staging_noshows    | age                | integer                        |
+| staging_noshows    | scholarship        | integer                        |
+| staging_noshows    | hipertension       | integer                        |
+| staging_noshows    | diabetes           | integer                        |
+| staging_noshows    | alcoholism         | integer                        |
+| staging_noshows    | handcap            | integer                        |
+| appointments       | appointment_id     | bigint                         |
+| appointments       | patient_id         | bigint                         |
+| appointments       | neighbourhood_id   | integer                        |
+| appointments       | scheduled_day      | timestamp without time zone    |
+| appointments       | appointment_day    | date                           |
+| appointments       | sms_received       | integer                        |
+| appointments       | showed_up          | character varying              |
+| appointments       | date_diff          | integer                        |
+| patients           | patient_id         | bigint                         |
+| patients           | gender             | character varying              |
+| patients           | age                | integer                        |
+| patients           | scholarship        | integer                        |
+| patients           | hipertension       | integer                        |
+| patients           | diabetes           | integer                        |
+| patients           | alcoholism         | integer                        |
+| patients           | handcap            | integer                        |
+| locations          | neighbourhood_id   | integer                        |
+| locations          | neighbourhood_name | character varying              |
+
+
 ## Interesting Queries and Insights
 
 ### Join Example
