@@ -3,7 +3,8 @@ Beth Spornitz
 February 11, 2026
 
 # Healthcare No-Show Database Project  
-Database: week07_noshows  
+Database:  healthcare_noshows_appt.csv
+URL:  (https://www.kaggle.com/datasets/iamtanmayshukla/healthcare-no-shows-appointments-dataset)
 Total Appointment Records: 106,988  
 Tables: staging_noshows, patients, appointments, locations
 
