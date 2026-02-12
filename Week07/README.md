@@ -159,3 +159,26 @@ One challenge was determining how to structure the data relationally. The origin
 To improve database design and meet project requirements, I created a staging table for raw import and then separated the data into normalized tables (patients, appointments, and locations).
 
 Another challenge was correctly interpreting the `showed_up` field, which was stored as text ('TRUE'/'FALSE') rather than a boolean. This required conditional logic in aggregation queries to calculate accurate no-show rates.
+
+## Verification Screenshots
+
+### Current Database
+![Current Database](screenshots/01_current_database.png)
+
+### Tables in Database
+![Tables List](screenshots/02_tables_list.png)
+
+### Table Structure and Data Types
+![Table Structures](screenshots/03_table_structures.png)
+
+### Join Query Example
+![Join Query](screenshots/08_join_appointments_locations.png)
+
+### Group By – No-Show Rate by Neighborhood
+![Group By Neighborhood](screenshots/09_groupby_noshow_rate.png)
+
+### Group By – SMS Received
+![Group By SMS](screenshots/10_groupby_sms_received.png)
+
+### Group By – Age Band
+![Group By Age Band](screenshots/11_groupby_age_band.png)
