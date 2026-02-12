@@ -1,6 +1,6 @@
 # Module 7 – Final Project  
-Beth Spornitz
-February 11, 2026
+Beth Spornitz  
+February 11, 2026  
 
 # Healthcare No-Show Database Project  
 Database:  healthcare_noshows_appt.csv  
@@ -41,11 +41,9 @@ From the staging table, I normalized the data into three relational tables:
 - `appointments`
 - `locations`
 
-This transformation improved data organization and reduced redundancy.
-
 The final database structure includes:
 
-- A fact-style table (`appointments`) containing appointment-level records.
+- A fact style table (`appointments`) containing appointment level records.
 - A patient dimension table (`patients`) containing demographic and health information.
 - A location dimension table (`locations`) containing neighborhood information.
 
@@ -66,7 +64,7 @@ The database includes:
 - Numeric data types (e.g., age, sms_received)
 - Date and timestamp data types (appointment_day, scheduled_day)
 
-Screenshots verifying these steps are included in the screenshots folder.
+Screenshots verifying these steps are included in the screenshots area below.
 
 ## Data Dictionary
 
@@ -156,8 +154,6 @@ This demonstrates how relational databases can be used to extract meaningful ope
 ## Obstacles Encountered
 
 One challenge was determining how to structure the data relationally. The original dataset existed as a single flat CSV file.
-
-To improve database design and meet project requirements, I created a staging table for raw import and then separated the data into normalized tables (patients, appointments, and locations).
 
 Another challenge was correctly interpreting the `showed_up` field, which was stored as text ('TRUE'/'FALSE') rather than a boolean. This required conditional logic in aggregation queries to calculate accurate no-show rates.
 
